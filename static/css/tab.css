@@ -1,0 +1,8 @@
+.tab-wrapper {
+    width: 88%;
+    margin-left: 5%;
+    position: relative;
+    display: flex;
+    top: 15px;
+    background-color: white;
+}

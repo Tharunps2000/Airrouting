@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ROUTE CLASSIFIER</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="static/css/all.min.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/slick/slick.css"/>
+    <link rel="stylesheet" href="static/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+    <link rel="stylesheet" href="static/css/templatemo-dream-pulse.css" />
+    <link rel="stylesheet" href="static/css/circle.css" />
+    <link rel="stylesheet" href="static/css/card.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+        <link rel="stylesheet" href="static/css/tab.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel = "icon" href = 
+    "https://previews.123rf.com/images/goodzone95/goodzone951704/goodzone95170400068/76185930-airplane-icon.jpg" 
+            type = "image/x-icon">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-sidebar-sticky">
+              <div class="tm-brand-box">
+                <div class="tm-double-border-1">
+                  <div class="tm-double-border-2">
+                    <h1 class="tm-brand text-uppercase">FLIGHT ASSIST</h1>
+                  </div>
+                </div>
+              </div>
+
+              <ul  class="nav flex-column text-uppercase text-center tm-main-nav">
+                <li class="nav-item">
+                  <a href="{{ url_for('eda') }}" class="nav-link active" >
+                    <span class="d-inline-block mr-8">EDA Weather data</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('classify') }}" class="nav-link">
+                    <span class="d-inline-block mr-8">Route Classifier V0(Version 0)</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('ts') }}" class="nav-link">
+                    <span class="d-inline-block mr-8">Route Classifier V1(Version 1)</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('landing') }}" class="nav-link">
+                    <span class="d-inline-block mr-8">Landing Assistant</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('index') }}#performace" class="nav-link">
+                    <span class="d-inline-block mr-8">Performace walk-through</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+              </ul>
+
+              <footer class="text-center text-white small">
+              </footer>
+            </div>
+          </nav> 
+          <div class="tm-section-wrap bg-white">
+            <div class="tm-section-wrap bg-white tm-color-yellow">
+              <section id="eda" class="row tm-section">
+              <div class="row tm-clients-images">
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 tm-img-wrap">
+                            <img src="static/img/SVM.jpeg" alt="Client Image" class="img-fluid tm-client-img" />
+                              <br>
+                              <br>
+                              <br>
+                              <h3 style="text-align:center;"> SVM</h3>
+                               <p style="text-align:center;">SVMs are a supervised 
+                                learning strategy that is broadly utilized for classification 
+                                and regression procedures. 
+                            They have a place with a 
+                                group of generalized linear classification. A unique
+                                property of SVM is, SVM simultaneously minimizes the 
+                                empirical classification error and maximizes the 
+                                geometric margin.
+                          So SVM is termed as Maximum 
+                                Margin Classifiers.On each side of the hyperplane, two 
+                                hyperplanes that are parallel are produced that differ the 
+                                information. </p>
+  
+                          </div>
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 tm-img-wrap">
+                              <img src="static/img/NB.jpeg" alt="Client Image" class="img-fluid tm-client-img" />
+                              <br>
+                              <br>
+                              <br>
+                              <BR>
+                                <BR>
+                                  <BR>
+                              <h3 style="text-align:center;"> Naive Bayes</h3>
+                              <p style="text-align:center;"> They are a group of 
+                                classification algorithms based on Bayes’ Theorem. 
+                                It 
+                                is a family of algorithms where all of them share a 
+                                common principle, i.e. features being classified that are 
+                                independent of each other.</p>
+                          </div>
+                    </div>
+                  </div>
+          <div class=="pad-20 ">
+          <div class="  tm-section-wrap bg-white">
+          <section id="svm" class="row tm-section">
+                <div class="col-xl-6 mb-5">
+                  <div class="tm-contact-form-wrap">
+                    <form action="{{ url_for('result') }}" method="POST" class="tm-contact-form">
+                        <div class="form-group">
+                        <h2 class="tm-color-primary tm-section-title"> ROUTE CLASSIFIER</h2>
+                         <p> DESTINATION AIRPORT </p>
+                          <input type="text" id="contact_name" name="airportName" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Destination Airport" required="" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <p> CLASSIFIER</p>
+                            <select name="classifier" id="classifier">
+                            <option value="SVM">SVM</option>
+                            <option value="NB">NB</option>
+                            </select>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group mb-0">
+                          <button type="submit" class="button" >
+                              <center><b>Generate weather reports and predict</b></center>
+                          </button>
+                        </div>
+                      </form>
+                  </div>
+                  <br>
+                  <div class="scroll-view" >
+                  <p class="item-1">Abraham Lincoln Capital Airport <br> ZIP CODE:62707 <br> IATA: SPI </p>
+                  <p class="item-2">Bangor International Airport <br>ZIP CODE:04401<br>IATA: BGR</p>
+                  <p class="item-3">Cannon Air Force Base <br>ZIP CODE:62707 <br>IATA: CVS</p>
+                  <p class="item-4">Dallas Love Field Airport <br> ZIP CODE:75235 <br> IATA: DAL </p>
+                  <p class="item-5">Eppley Airfield <br> ZIP CODE:NE 68110 <br> IATA: OMA </p>
+                  <p class="item-6">Fort Smith Regional Airport <br> ZIP CODE:72344 <br> IATA: FSM </p>
+                  <p class="item-7">George Bush Intercontinental Airport <br> ZIP CODE:72243 <br> IATA: IAH </p>
+                </div>
+                </div>
+                {% if anchor %}
+                <div class="box" id="box-view">
+                  <div class="col-xl-26 mb-2">
+                    <div class="card-group">
+                      <div class="card bg-primary">
+                        <div class="card-body text-center">
+                                <p class="typing-demo"> Temperture : {{ val[0]}} </p>
+                                <p class="typing-demo">Humidity : {{ val[1]}} </p>
+                                <p class="typing-demo">Wind Speed : {{ val[2]}} </p>
+                                <p class="typing-demo">Air Pressure : {{ val[3]}} </p>     
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="col-xl-26 mb-2">
+                    <div class="card-group">
+                      <div class="card bg-warning">
+                        <div class="card-body text-center">
+                          <p class="typing-demo">{{ result }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  <!-- Example split danger button -->
+                </div>
+                {% if anchor%}
+                <div class=" alert success">
+                <span class="closebtn">&times;</span>  
+                <strong>Success!</strong>  Weather features are being fetched from Openweather API and Classifier processed the input!
+                </div>
+                {% endif %}
+              </section>
+          </div>
+      </div>
+    </div>
+  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery.singlePageNav.min.js"></script>
+    <script src="static/js/parallax.min.js"></script>
+    <script src="static/slick/slick.min.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/templatemo-scripts.js"></script>
+{% if anchor %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.location.hash = '#{{ anchor }}';
+    });
+</script>
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>
+{% endif %}
+
+  </body>
+</html>
