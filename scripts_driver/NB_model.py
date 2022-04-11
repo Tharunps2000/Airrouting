@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 import pickle
 import numpy as np
-
+//
 def add_label(airport_df):
     target = []
     for index, row in airport_df.iterrows():
